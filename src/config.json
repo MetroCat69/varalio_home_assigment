@@ -1,0 +1,262 @@
+{
+  "evaluation_criteria": {
+    "conversation_sentiment": {
+      "name": "conversation_sentiment",
+      "description": "Overall emotional tone and positivity of the conversation",
+      "prompt": "Analyze the overall sentiment and emotional tone of this conversation. Consider the language used, tone indicators, and emotional expressions from all participants.",
+      "response_options": {
+        "positive": {
+          "score_multiplier": 1.0,
+          "description": "Predominantly positive and upbeat tone",
+          "color": "#10b981"
+        },
+        "neutral": {
+          "score_multiplier": 0.5,
+          "description": "Balanced or neutral emotional tone",
+          "color": "#6b7280"
+        },
+        "negative": {
+          "score_multiplier": -0.4,
+          "description": "Predominantly negative or hostile tone",
+          "color": "#ef4444"
+        }
+      },
+      "max_points": 30,
+      "is_config_based": true,
+      "default_score_multiplier": 0.5,
+      "minimum_confidence": "high"
+    },
+    "participant_engagement": {
+      "name": "participant_engagement",
+      "description": "Level of active participation and responsiveness from all parties",
+      "prompt": "Assess the level of engagement and active participation from both parties in this conversation. Look for interactive elements, question-asking, and responsive behavior.",
+      "response_options": {
+        "highly_engaged": {
+          "score_multiplier": 1.0,
+          "description": "All parties actively engaged and responsive",
+          "color": "#10b981"
+        },
+        "moderately_engaged": {
+          "score_multiplier": 0.7,
+          "description": "Adequate engagement with some interactive elements",
+          "color": "#3b82f6"
+        },
+        "poorly_engaged": {
+          "score_multiplier": 0.2,
+          "description": "Minimal engagement or one-sided conversation",
+          "color": "#f59e0b"
+        }
+      },
+      "max_points": 30,
+      "is_config_based": true,
+      "default_score_multiplier": 0.5,
+      "minimum_confidence": "moderate"
+    },
+    "concern_handling_quality": {
+      "name": "concern_handling_quality",
+      "description": "How effectively concerns and questions were addressed and handled",
+      "prompt": "",
+      "response_options": {
+        "comprehensive_handling": {
+          "score_multiplier": 1.0,
+          "description": "Thorough handling addressing all aspects of the concern",
+          "color": "#10b981"
+        },
+        "substantial_handling": {
+          "score_multiplier": 0.7,
+          "description": "Meaningful attempt at addressing concern with minor gaps",
+          "color": "#3b82f6"
+        },
+        "partial_handling": {
+          "score_multiplier": 0.5,
+          "description": "Some handling provided but significant gaps remain",
+          "color": "#f59e0b"
+        },
+        "surface_level_response": {
+          "score_multiplier": 0.2,
+          "description": "Concern acknowledged but no substantial response provided",
+          "color": "#f97316"
+        },
+        "unaddressed": {
+          "score_multiplier": 0.0,
+          "description": "Concern was ignored or not properly acknowledged",
+          "color": "#ef4444"
+        }
+      },
+      "max_points": 30,
+      "is_config_based": false,
+      "default_score_multiplier": 0.3,
+      "minimum_confidence": "high"
+    },
+    "communication_clarity": {
+      "name": "communication_clarity",
+      "description": "How clearly and effectively ideas are communicated by all parties",
+      "prompt": "Evaluate how clearly both parties communicate their ideas, questions, and responses in this conversation. Consider clarity of expression, use of jargon, and mutual understanding.",
+      "response_options": {
+        "crystal_clear": {
+          "score_multiplier": 1.0,
+          "description": "All communication is clear and easy to understand",
+          "color": "#10b981"
+        },
+        "mostly_clear": {
+          "score_multiplier": 0.75,
+          "description": "Generally clear communication with minor ambiguities",
+          "color": "#3b82f6"
+        },
+        "somewhat_unclear": {
+          "score_multiplier": 0.5,
+          "description": "Some unclear or confusing communication",
+          "color": "#f59e0b"
+        },
+        "frequently_confusing": {
+          "score_multiplier": 0.25,
+          "description": "Frequent miscommunication or unclear messages",
+          "color": "#f97316"
+        },
+        "incomprehensible": {
+          "score_multiplier": 0.0,
+          "description": "Very difficult to understand what is being communicated",
+          "color": "#ef4444"
+        }
+      },
+      "max_points": 40,
+      "is_config_based": true,
+      "default_score_multiplier": 0.5,
+      "minimum_confidence": "moderate"
+    }
+  },
+  "quality_indicators": [
+    {
+      "name": "repetitive_unaddressed_concerns",
+      "type": "critical",
+      "score_impact": -30,
+      "description": "Same concern raised 3+ times without meaningful progress toward addressing it",
+      "minimum_confidence": "high",
+      "color": "#dc2626"
+    },
+    {
+      "name": "escalation_language",
+      "type": "critical",
+      "score_impact": -12,
+      "description": "Use of escalation language like 'unacceptable', 'disappointed', 'speak to manager'",
+      "minimum_confidence": "very_high",
+      "color": "#dc2626"
+    },
+    {
+      "name": "tone_deterioration",
+      "type": "critical",
+      "score_impact": -15,
+      "description": "Dramatic shift from friendly/casual tone to formal/cold tone during conversation",
+      "minimum_confidence": "high",
+      "color": "#dc2626"
+    },
+    {
+      "name": "conversation_shutdown",
+      "type": "critical",
+      "score_impact": -15,
+      "description": "Cutting others off or dominating the conversation, preventing them from speaking or dismising them in any way",
+      "minimum_confidence": "moderate",
+      "color": "#dc2626"
+    },
+    {
+      "name": "one_sided_effort",
+      "type": "warning",
+      "score_impact": -10,
+      "description": "Conversation effort heavily imbalanced with only one party driving engagement",
+      "minimum_confidence": "high",
+      "color": "#d97706"
+    },
+    {
+      "name": "question_avoidance",
+      "type": "warning",
+      "score_impact": -14,
+      "description": "Direct questions receiving non-answers or topic changes instead of responses",
+      "minimum_confidence": "high",
+      "color": "#d97706"
+    },
+    {
+      "name": "declining_enthusiasm",
+      "type": "warning",
+      "score_impact": -8,
+      "description": "Noticeable decline in enthusiasm and energy over the course of conversation",
+      "minimum_confidence": "moderate",
+      "color": "#d97706"
+    },
+    {
+      "name": "mutual_collaboration",
+      "type": "positive",
+      "score_impact": 8,
+      "description": "Both parties contributing thoughtfully and building on each other's input",
+      "minimum_confidence": "high",
+      "color": "#059669"
+    },
+    {
+      "name": "constructive_concern_handling",
+      "type": "positive",
+      "score_impact": 10,
+      "description": "Concerns acknowledged and addressed with constructive, solution-oriented approach",
+      "minimum_confidence": "high",
+      "color": "#059669"
+    },
+    {
+      "name": "high_stakes_context",
+      "type": "info",
+      "score_impact": 0,
+      "description": "Money, deadlines, major decisions, or other high-stakes elements mentioned in conversation",
+      "minimum_confidence": "moderate",
+      "color": "#2563eb"
+    },
+    {
+      "name": "external_pressure",
+      "type": "info",
+      "score_impact": 0,
+      "description": "Boss, client, or other external pressure affecting the conversation dynamics",
+      "minimum_confidence": "moderate",
+      "color": "#2563eb"
+    }
+  ],
+  "health_score_ranges": {
+    "excellent": {
+      "min_score": 85,
+      "max_score": 100,
+      "label": "Excellent",
+      "color": "#10b981",
+      "description": "Healthy conversation with strong positive indicators and minimal concerns"
+    },
+    "good": {
+      "min_score": 70,
+      "max_score": 84,
+      "label": "Good",
+      "color": "#3b82f6",
+      "description": "Generally positive conversation with minor areas for improvement"
+    },
+    "concerning": {
+      "min_score": 50,
+      "max_score": 69,
+      "label": "Concerning",
+      "color": "#f59e0b",
+      "description": "Notable concerns present - intervention or follow-up recommended"
+    },
+    "poor": {
+      "min_score": 25,
+      "max_score": 49,
+      "label": "Poor",
+      "color": "#f97316",
+      "description": "Significant problems evident - immediate attention required"
+    },
+    "critical": {
+      "min_score": 0,
+      "max_score": 24,
+      "label": "Critical",
+      "color": "#ef4444",
+      "description": "Severe concerns present - urgent intervention needed"
+    }
+  },
+  "confidence_level_weights": {
+    "very_high": 5,
+    "high": 4,
+    "moderate": 3,
+    "low": 2,
+    "very_low": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "test_cases": {
+    "positive_resolution": {
+      "name": "Positive Resolution",
+      "description": "Customer issue resolved with empathy and efficiency",
+      "transcript": "Customer: I'm really frustrated with this billing issue!\nAgent: I understand your frustration. Let me help you resolve this right away.\nCustomer: I've been charged twice for the same service.\nAgent: I can see the duplicate charge here. I'll process a refund immediately and ensure this doesn't happen again.\nCustomer: Thank you so much! That's exactly what I needed.\nAgent: You're welcome! The refund will appear in 3-5 business days. Is there anything else I can help you with today?",
+      "expected_health_level": "excellent"
+    },
+    "escalated_complaint": {
+      "name": "Escalated Complaint",
+      "description": "Escalated situation with frustrated customer",
+      "transcript": "Customer: This is absolutely ridiculous! I've been waiting for 3 hours!\nAgent: I apologize for the wait time, sir.\nCustomer: That's not good enough! I want to speak to your manager NOW!\nAgent: I understand you're upset. Let me see what I can do first...\nCustomer: No! Get me your manager immediately or I'm canceling my account!\nAgent: I'll transfer you to my supervisor right away.",
+      "expected_health_level": "poor"
+    },
+    "technical_support": {
+      "name": "Technical Support",
+      "description": "Technical support with systematic problem-solving",
+      "transcript": "Customer: My internet keeps disconnecting every few minutes.\nAgent: I'd be happy to help troubleshoot that issue. When did this start happening?\nCustomer: About 2 days ago. It's really affecting my work.\nAgent: I understand how disruptive that must be. Let's run some diagnostics on your connection.\nCustomer: Okay, what do you need me to do?\nAgent: First, can you restart your modem and router? I'll walk you through it step by step.",
+      "expected_health_level": "good"
+    },
+    "team_collaboration": {
+      "name": "Team Collaboration",
+      "description": "Collaborative team discussion with positive problem-solving",
+      "transcript": "Project Manager: Let's brainstorm solutions for the client's new requirements.\nDeveloper: What if we modify the existing API instead of building from scratch?\nDesigner: That's smart! And I can adapt the UI components we already have.\nProject Manager: Excellent thinking! How can we make this even better?\nDeveloper: We could add automated testing to catch issues early.\nDesigner: And I'll create a style guide so future changes are consistent.\nProject Manager: This collaborative approach is exactly what we need. Great work everyone!",
+      "expected_health_level": "excellent"
+    },
+    "repetitive_issues": {
+      "name": "Repetitive Unresolved Issues",
+      "description": "Repetitive unresolved issues with declining service quality",
+      "transcript": "Customer: I've asked about this same shipping issue three times now. Why isn't it fixed?\nAgent: I apologize for the confusion. Let me look into this again.\nCustomer: You said that last time too. And the time before that.\nAgent: I understand your frustration. The system shows multiple tickets on this.\nCustomer: So what are you actually going to do differently this time?\nAgent: Well, I'll escalate it to my supervisor.\nCustomer: That's exactly what the last two agents said. This is unacceptable.\nAgent: I'm sorry, but that's the standard process we have to follow.",
+      "expected_health_level": "critical"
+    },
+    "conflicted_meeting": {
+      "name": "Conflicted Team Meeting",
+      "description": "Team meeting with disagreement and declining engagement",
+      "transcript": "Team Member 1: I think we should go with the aggressive marketing strategy.\nTeam Member 2: I disagree completely. That approach failed last time.\nTeam Member 1: But this is different. The market conditions have changed.\nTeam Member 2: You always say that. You never listen to feedback.\nTeam Member 1: That's not true. I just think you're being too conservative.\nTeam Member 2: Whatever. Do what you want. I'm done arguing about this.\nTeam Member 1: Fine. I'll just present my ideas without your input then.",
+      "expected_health_level": "poor"
+    },
+    "loan_application": {
+      "name": "Urgent Loan Application",
+      "description": "High-stakes customer service with time pressure and successful resolution",
+      "transcript": "Customer: I'm calling about my loan application. My boss said I need to get this approved by end of week or I might lose the house.\nAgent: I understand this is urgent for you. Let me check your application status right away.\nCustomer: Please, I've been waiting for two weeks already.\nAgent: I see the delay was due to missing documentation. However, I can expedite this if we get the papers today.\nCustomer: I'll send them immediately. Thank you for working with me on this timeline.\nAgent: Absolutely. I'll personally monitor this and call you tomorrow with an update.",
+      "expected_health_level": "good"
+    },
+    "billing_inquiry": {
+      "name": "Simple Billing Inquiry",
+      "description": "Straightforward billing question with clear explanation",
+      "transcript": "Customer: I have a question about my bill this month.\nAgent: I'd be happy to help explain your bill. What specific charges are you curious about?\nCustomer: There's a $15 fee I don't recognize.\nAgent: Let me look that up for you. I can see that's a one-time setup fee for the premium service you added last month.\nCustomer: Oh right, I forgot about that upgrade. Thanks for clarifying!\nAgent: No problem at all! Is there anything else about your bill I can explain?",
+      "expected_health_level": "excellent"
+    }
+  }
+}
