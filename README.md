@@ -407,7 +407,9 @@ That's it! 🎉
 ![alt text](ui_mock/Captu3333re.PNG)
 
 # Implemented ui
-
 ![alt text](pictures_from_a_working_demo/pic1.PNG)
 ![alt text](pictures_from_a_working_demo/pic2.PNG)
 ![alt text](pictures_from_a_working_demo/pic3.PNG)
+
+# UI AFTER BUG FIXES DONE AT SUNDAY MORNING
+![alt text](Captur2222222222e.PNG)
